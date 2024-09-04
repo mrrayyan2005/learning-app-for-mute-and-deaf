@@ -1,0 +1,6 @@
+0 Bye
+1 Hello
+2 No
+3 Perfect
+4 Thank You
+5 Yes

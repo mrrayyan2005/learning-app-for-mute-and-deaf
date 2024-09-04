@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gujarati Sign Language Alphabet</title>
+</head>
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F8EDE3;  
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.alphabet-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex: 1; /* Allows the container to expand and take up available space */
+}
+
+.letter-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 120px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    padding: 15px;
+    position: relative;
+    border: 2px solid #ddd;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initially moved down */
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+.letter-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+
+.letter-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    background-color: #eee;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+</style>
+<body>
+    <header>
+        <h1>
+            ગુજરાતી સાંકેતિક ભાષાના મૂળાક્ષરો [Gujarati Sign Language Alphabet]</h1>
+    </header>
+    
+    <section class="alphabet-container">
+        <div class="letter-card">
+            <img src="Gujrati_image/1.png" alt="Sign A">
+        </div>
+        <div class="letter-card">
+            <img src="Gujrati_image/2.png" alt="Sign B">
+        </div>
+        <div class="letter-card">
+            <img src="Gujrati_image/3.png" alt="Sign C">
+        </div>
+        
+        <div class="letter-card">
+            <img src="Gujrati_image/6.png" alt="Sign F">
+        </div>
+         
+        <div class="letter-card">
+            <img src="Gujrati_image/8.png" alt="Sign H">
+        </div>
+        <div class="letter-card">
+            <img src="Gujrati_image/9.png" alt="Sign I">
+        </div>
+        <div class="letter-card">
+            <img src="Gujrati_image/10.png" alt="Sign J">
+        </div>
+        <div class="letter-card">
+            <img src="Gujrati_image/11.png" alt="Sign J">
+        </div>
+        <div class="letter-card">
+            <img src="Gujrati_image/12.png" alt="Sign J">
+        </div>
+        <div class="letter-card">
+            <img src="Gujrati_image/13.png" alt="Sign J">
+        </div>
+        <div class="letter-card">
+            <img src="Gujrati_image/14.png" alt="Sign J">
+        </div>
+        <div class="letter-card">
+            <img src="Gujrati_image/15.png" alt="Sign J">
+        </div>
+        <!-- Continue adding letters as needed -->
+    </section>
+    
+    <footer>
+        <p>સાંકેતિક ભાષા સાથે ગુજરાતી મૂળાક્ષરો શીખો [Learn the Gujarati alphabet with sign language]</p>
+    </footer>
+</body>
+</html>
