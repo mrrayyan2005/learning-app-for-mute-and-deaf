@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignLearn - Learning Session</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/learning.css">
+</head>
+<body>
+    <nav>
+        <div class="logo" id="logo">SignLearn</div>
+        <ul class="nav-links">
+            <li><a href="/" id="home-link">Home</a></li>
+            <li><a href="/static/english_sign.html" id="english-sign-link" class="btn-signup">English-Sign</a></li>
+            <li><a href="/static/gujrat.html" id="gujarati-sign-link" class="btn-signup">Gujrati-Sign</a></li>
+            <li><a href="/" id="back-link" class="btn-login">Back to Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="learning-container">
+        <div class="learning-header">
+            <h1 id="learning-title">Sign Language Learning</h1>
+            <p id="learning-subtitle">Position your hand in front of the camera and start learning!</p>
+        </div>
+
+        <div class="learning-interface">
+            <div class="video-section">
+                <video id="videoElement" autoplay muted playsinline></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+                <div class="video-overlay">
+                    <div id="predictionBox" class="prediction-box">
+                        <div id="predictedLetter" class="predicted-letter">?</div>
+                        <div id="confidence" class="confidence">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="learning-mode">
+                    <button id="alphabetMode" class="mode-btn active">Learn Alphabets (A-H)</button>
+                    <button id="wordsMode" class="mode-btn">Learn Words</button>
+                </div>
+
+                <div class="control-buttons">
+                    <button id="startBtn" class="control-btn start-btn">Start Camera</button>
+                    <button id="stopBtn" class="control-btn stop-btn" disabled>Stop Camera</button>
+                    <button id="captureBtn" class="control-btn capture-btn" disabled>Capture & Predict</button>
+                </div>
+
+                <div class="status">
+                    <div id="statusMessage" class="status-message">Click "Start Camera" to begin</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="learning-guide">
+            <div class="guide-section">
+                <h3>Learning Guide</h3>
+                <div id="currentLetters" class="current-letters">
+                    <span class="letter-badge">A</span>
+                    <span class="letter-badge">B</span>
+                    <span class="letter-badge">C</span>
+                    <span class="letter-badge">D</span>
+                    <span class="letter-badge">E</span>
+                    <span class="letter-badge">F</span>
+                    <span class="letter-badge">G</span>
+                    <span class="letter-badge">H</span>
+                </div>
+            </div>
+
+            <div class="reference-images">
+                <h3>Reference Signs</h3>
+                <div id="referenceGrid" class="reference-grid">
+                    <!-- Reference images will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/learning.js"></script>
+</body>
+</html>

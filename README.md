@@ -1,64 +1,248 @@
-# Sign Language Learning Web App
+# SignLearn - Modern React + Flask Sign Language Learning App
 
-This web application is designed to help deaf and mute individuals learn sign language in an interactive and engaging manner. The application integrates machine learning models to recognize and interpret sign language gestures, offering users the opportunity to learn alphabets and words in sign language.
+A cutting-edge web application for learning sign language through AI-powered real-time gesture recognition. Built with React frontend and Flask API backend.
 
-## Features
-- **Learn Alphabets and Words**: Users can interactively learn sign language alphabets and words.
-- **Machine Learning Integration**: The app uses trained ML models (`keras_model.h5` and `labels.txt`) for accurate gesture recognition.
-- **Interactive Interface**: A user-friendly interface with animations for an enhanced learning experience.
-- **Flask Framework**: Built using the Flask web framework for seamless back-end and front-end integration.
+## 🚀 **NEW ARCHITECTURE** - React + Flask API
 
-## Learning Flow
-1. **Select Learning Module**:  
-   From the homepage, users can choose between "Learn Alphabets" and "Learn Words."
+### **What's Changed:**
+- ✅ **Modern React Frontend** - Component-based, responsive UI
+- ✅ **Flask API Backend** - RESTful API endpoints
+- ✅ **Browser Camera Integration** - WebRTC MediaDevices API
+- ✅ **Real-time Predictions** - Live gesture recognition
+- ✅ **Better Performance** - Optimized for web deployment
+- ✅ **Mobile Friendly** - Responsive design for all devices
 
-2. **Gesture Recognition**:  
-   The application uses a webcam to capture the user’s gestures in real-time. The integrated ML model interprets these gestures and provides immediate feedback.
+## 🎯 Features
 
-3. **Learning Feedback**:  
-   - For alphabets: The app displays recognized letters and suggests corrections if gestures don’t match.
-   - For words: Users are guided through word gestures step-by-step with visual aids.
+- **Real-time Hand Gesture Recognition** using AI models
+- **Learn Alphabets (A-H)** with instant feedback
+- **Learn Common Words** (Bye, Hello, No, Perfect, Thank You, Yes)
+- **Bilingual Support** (English/Gujarati)
+- **Browser-based Camera** access (no desktop dependencies)
+- **Modern UI/UX** with beautiful animations
+- **Responsive Design** for desktop and mobile
+- **Real-time Confidence Scores** and prediction analytics
 
-4. **Completion and Review**:  
-   After completing a session, users can review their performance and retry exercises.
+## 🏗️ Architecture
 
-## Technologies Used
-- **Front-End**: HTML, CSS, JavaScript
-- **Back-End**: Flask (Python Framework)
-- **Machine Learning Framework**: TensorFlow and Keras
-- **Other Tools**: OpenCV for video processing
+```
+SignLearn/
+├── learning-app-for-mute-and-deaf/          # Backend (Flask API)
+│   ├── app.py                               # Flask API server
+│   ├── model1/                              # Alphabet recognition model
+│   ├── Model2/                              # Words recognition model
+│   ├── requirements.txt                     # Python dependencies
+│   └── signlearn-frontend/                  # Frontend (React App)
+│       ├── src/
+│       │   ├── App.js                       # Main app component
+│       │   ├── components/
+│       │   │   ├── HomePage.js              # Landing page
+│       │   │   ├── LearningInterface.js     # Main learning UI
+│       │   │   └── CameraCapture.js         # Camera component
+│       │   └── ...
+│       └── package.json                     # Node dependencies
+```
 
-## Machine Learning Model
-The application leverages a pre-trained neural network model built using TensorFlow and Keras.  
-- **Model File**: `keras_model.h5`  
-  This file contains the trained neural network capable of recognizing sign language gestures.  
-- **Labels File**: `labels.txt`  
-  This file maps the output of the model to corresponding sign language characters or words.  
+## 🛠️ Installation & Setup
 
-The model was trained using a dataset of hand gestures, and OpenCV was used for preprocessing video frames to extract relevant features for training.
+### Prerequisites
+- Python 3.8+
+- Node.js 14+
+- npm or yarn
+- Webcam/Camera access
 
-## Installation and Setup
-To set up and run the application locally, follow these steps:
+### Backend Setup (Flask API)
 
-1. Clone the repository and navigate to its directory:
-   ```bash
-     git clone <repository-url>
-     cd <repository-directory>
-2. Set up a virtual environment and activate it:
-    python -m venv venv
-    source venv/bin/activate    # For Linux/Mac
-    venv\Scripts\activate       # For Windows
-3. pip install -r requirements.txt
+1. **Navigate to backend directory:**
+```bash
+cd learning-app-for-mute-and-deaf
+```
 
-   pip install -r requirements.txt
-   
-4.Run the Flask application:
- 
-  python app.py
+2. **Create virtual environment:**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
+3. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
 
-Some images of project:-
-![Screenshot 2024-09-08 043844](https://github.com/user-attachments/assets/78a68547-e1db-4752-b5ad-cf5ae690cab7)
-![Screenshot 2024-09-08 043857](https://github.com/user-attachments/assets/7896bbfe-dce2-46eb-9696-3016ad245fb3)
-![Screenshot 2024-09-08 041240](https://github.com/user-attachments/assets/3f6b1e7c-87ad-4800-abed-a5d3b419cb83)
-![Screenshot 2024-08-31 103022](https://github.com/user-attachments/assets/f4684c1d-79b5-46b2-8813-dc36d36d5fa6)
+4. **Start Flask API server:**
+```bash
+python app.py
+```
+🌐 **Backend running at:** `http://localhost:5000`
+
+### Frontend Setup (React)
+
+1. **Navigate to frontend directory:**
+```bash
+cd learning-app-for-mute-and-deaf/signlearn-frontend
+```
+
+2. **Install dependencies:**
+```bash
+npm install
+```
+
+3. **Start React development server:**
+```bash
+npm start
+```
+🌐 **Frontend running at:** `http://localhost:3000`
+
+## 🚀 Quick Start
+
+1. **Start Backend API:**
+```bash
+cd learning-app-for-mute-and-deaf
+python app.py
+```
+
+2. **Start Frontend (in new terminal):**
+```bash
+cd learning-app-for-mute-and-deaf/signlearn-frontend
+npm start
+```
+
+3. **Open your browser:** `http://localhost:3000`
+
+4. **Allow camera access** when prompted
+
+5. **Start learning!** 🎉
+
+## 📱 Usage
+
+### Learning Flow:
+1. **Home Page:** Choose between "Learn Alphabets" or "Learn Words"
+2. **Camera Setup:** Allow camera access
+3. **Start Recognition:** Click "Start Recognition" button
+4. **Practice Signs:** Position your hand in front of camera
+5. **Get Feedback:** See real-time predictions and confidence scores
+6. **Improve:** Practice until you achieve high confidence!
+
+### Supported Signs:
+- **Alphabets:** A, B, C, D, E, F, G, H
+- **Words:** Bye, Hello, No, Perfect, Thank You, Yes
+
+## 🌐 Deployment
+
+### Deploy Frontend (Netlify/Vercel)
+
+1. **Build React app:**
+```bash
+cd signlearn-frontend
+npm run build
+```
+
+2. **Deploy build folder** to Netlify/Vercel
+
+### Deploy Backend (Heroku/Railway)
+
+1. **Ensure Procfile exists** (already included)
+2. **Deploy to Heroku:**
+```bash
+git add .
+git commit -m "Deploy SignLearn"
+heroku create your-app-name
+git push heroku main
+```
+
+### Environment Variables:
+```env
+# For production
+FLASK_ENV=production
+API_BASE_URL=https://your-backend-url.herokuapp.com/api
+```
+
+## 🔧 API Endpoints
+
+### Base URL: `http://localhost:5000/api`
+
+- **GET** `/health` - Health check
+- **POST** `/predict/alphabet` - Predict alphabet sign
+- **POST** `/predict/words` - Predict word sign  
+- **GET** `/labels/alphabet` - Get alphabet labels
+- **GET** `/labels/words` - Get word labels
+
+### Example Request:
+```javascript
+const response = await fetch('http://localhost:5000/api/predict/alphabet', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ image: base64ImageData })
+});
+```
+
+## 🎨 Technology Stack
+
+### Frontend:
+- **React 18** - Modern UI library
+- **CSS3** - Custom responsive styling
+- **MediaDevices API** - Camera access
+- **Fetch API** - HTTP requests
+
+### Backend:
+- **Flask** - Python web framework
+- **Flask-CORS** - Cross-origin requests
+- **OpenCV** - Image processing
+- **TensorFlow/Keras** - ML model inference
+- **cvzone** - Computer vision utilities
+
+## 🔍 Troubleshooting
+
+### Camera Issues:
+- **Permission Denied:** Allow camera access in browser settings
+- **No Camera Found:** Check camera connection
+- **Not Supported:** Use Chrome/Firefox/Safari
+
+### API Connection Issues:
+- **CORS Errors:** Ensure Flask-CORS is installed
+- **Connection Refused:** Check if Flask server is running on port 5000
+- **404 Errors:** Verify API endpoint URLs
+
+### Performance Issues:
+- **Slow Predictions:** Check network connection
+- **High CPU Usage:** Reduce capture frequency in CameraCapture.js
+
+## 📸 Screenshots
+
+### Home Page
+Beautiful landing page with language selection and learning mode options.
+
+### Learning Interface  
+Real-time camera feed with prediction overlay and confidence scores.
+
+### Mobile Responsive
+Fully responsive design works on all devices.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- TensorFlow team for ML framework
+- OpenCV community for computer vision tools
+- React team for the amazing frontend library
+- Flask team for the lightweight backend framework
+
+## 📞 Support
+
+For support, email info@signlearn.com or create an issue on GitHub.
+
+---
+
+**Built with ❤️ for the deaf and mute community**
+
+🌟 **Star this repo if you found it helpful!**
