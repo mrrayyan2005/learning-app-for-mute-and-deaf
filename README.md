@@ -208,6 +208,9 @@ const response = await fetch('http://localhost:5000/api/predict/alphabet', {
 - **High CPU Usage:** Reduce capture frequency in CameraCapture.js
 
 ## 📸 Screenshots
+![Uploading Screenshot 2025-10-13 at 11.46.44 PM.png…]()
+![Uploading Screenshot 2025-10-13 at 11.48.07 PM.png…]()
+
 
 ### Home Page
 Beautiful landing page with language selection and learning mode options.
