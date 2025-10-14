@@ -207,7 +207,9 @@ const response = await fetch('http://localhost:5000/api/predict/alphabet', {
 - **Slow Predictions:** Check network connection
 - **High CPU Usage:** Reduce capture frequency in CameraCapture.js
 
-## 📸 Screenshots
+![Uploading Screenshot 2025-10-13 at 11.48.07 PM.png…]()
+
+
 
 ### Home Page
 Beautiful landing page with language selection and learning mode options.
@@ -226,23 +228,3 @@ Fully responsive design works on all devices.
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- TensorFlow team for ML framework
-- OpenCV community for computer vision tools
-- React team for the amazing frontend library
-- Flask team for the lightweight backend framework
-
-## 📞 Support
-
-For support, email info@signlearn.com or create an issue on GitHub.
-
----
-
-**Built with ❤️ for the deaf and mute community**
-
-🌟 **Star this repo if you found it helpful!**
