@@ -8,6 +8,7 @@ import base64
 import io
 from PIL import Image
 import math
+import os
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for React frontend
@@ -193,9 +194,15 @@ def get_words_labels():
     return jsonify({"status": "success", "labels": words_labels})
 
 if __name__ == '__main__':
+    # Get port from environment variable for deployment, default to 5004 for local development
+    port = int(os.environ.get('PORT', 5004))
+    
     print("🚀 Starting CORRECT APP using YOUR proven HandDetector approach!")
-    print("📍 http://localhost:5004")
+    print(f"📍 Running on port {port}")
     print("✅ Using cvzone.HandTrackingModule.HandDetector (like your working code)")
     print("✅ Only predicts when hands are ACTUALLY detected")
     print("✅ Same processing logic as your working testing code")
-    app.run(debug=True, host='0.0.0.0', port=5004)
+    
+    # Use debug=False for production
+    debug_mode = os.environ.get('FLASK_ENV') != 'production'
+    app.run(debug=debug_mode, host='0.0.0.0', port=port)

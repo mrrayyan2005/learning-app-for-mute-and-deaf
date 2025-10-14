@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import CameraCapture from './CameraCapture';
 import './LearningInterface.css';
 
-const API_BASE_URL = 'http://localhost:5004/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5004/api';
 
 const LearningInterface = ({ mode, onGoHome, onSwitchMode }) => {
   const [isLoading, setIsLoading] = useState(false);
