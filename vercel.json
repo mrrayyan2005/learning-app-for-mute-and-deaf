@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/*.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "signlearn-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/signlearn-frontend/build/$1"
+    }
+  ],
+  "functions": {
+    "api/*.py": {
+      "maxDuration": 30
+    }
+  },
+  "buildCommand": "cd signlearn-frontend && npm install && npm run build"
+}

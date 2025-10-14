@@ -16,8 +16,7 @@ const LearningInterface = ({ mode, onGoHome, onSwitchMode }) => {
   useEffect(() => {
     const fetchLabels = async () => {
       try {
-        const endpoint = mode === 'alphabet' ? '/labels/alphabet' : '/labels/words';
-        const response = await fetch(`${API_BASE_URL}${endpoint}`);
+        const response = await fetch(`${API_BASE_URL}/labels?type=${mode}`);
         const data = await response.json();
         if (data.status === 'success') {
           setLabels(data.labels);
@@ -37,13 +36,15 @@ const LearningInterface = ({ mode, onGoHome, onSwitchMode }) => {
     setError(null);
 
     try {
-      const endpoint = mode === 'alphabet' ? '/predict/alphabet' : '/predict/words';
-      const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+      const response = await fetch(`${API_BASE_URL}/predict`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ image: imageData }),
+        body: JSON.stringify({ 
+          image: imageData,
+          type: mode 
+        }),
       });
 
       const data = await response.json();
