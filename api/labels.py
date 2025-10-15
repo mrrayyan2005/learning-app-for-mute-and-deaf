@@ -1,30 +1,42 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+from http.server import BaseHTTPRequestHandler
+import json
+import urllib.parse
 
-app = Flask(__name__)
-CORS(app)
-
-# Your exact labels
-alphabet_labels = ["A", "B", "C", "D", "E", "F", "G", "H"]
-words_labels = ["Bye", "Hello", "No", "Perfect", "Thank You", "Yes"]
-
-def handler(request):
-    if request.method == 'OPTIONS':
-        return '', 200
+class handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'application/json')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.end_headers()
         
-    try:
-        # Get the type from query parameter
-        label_type = request.args.get('type', 'words')
+        # Parse query parameters
+        parsed_url = urllib.parse.urlparse(self.path)
+        query_params = urllib.parse.parse_qs(parsed_url.query)
+        label_type = query_params.get('type', ['words'])[0]
+        
+        # Define labels (same as your real models)
+        alphabet_labels = ["A", "B", "C", "D", "E", "F", "G", "H"]
+        words_labels = ["Bye", "Hello", "No", "Perfect", "Thank You", "Yes"]
         
         if label_type == 'alphabet':
             labels = alphabet_labels
         else:
             labels = words_labels
             
-        return jsonify({
-            "status": "success", 
-            "labels": labels
-        })
+        response = {
+            "status": "success",
+            "type": label_type,
+            "labels": labels,
+            "count": len(labels)
+        }
         
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+        self.wfile.write(json.dumps(response).encode())
+        
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.end_headers()
