@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import CameraCapture from './CameraCapture';
 import './LearningInterface.css';
 
