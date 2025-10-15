@@ -22,6 +22,5 @@
       "src": "/(.*)",
       "dest": "/signlearn-frontend/build/$1"
     }
-  ],
-  "buildCommand": "cd signlearn-frontend && npm install && npm run build"
+  ]
 }
