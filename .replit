@@ -1,8 +1,8 @@
-run = "python backend.py"
+run = "python3 backend.py"
 language = "python3"
 
 [nix]
 channel = "stable-22_11"
 
 [deployment]
-run = ["sh", "-c", "python backend.py"]
+run = ["sh", "-c", "python3 backend.py"]
