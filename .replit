@@ -1,4 +1,4 @@
-run = "python real_backend.py"
+run = "pip install -r requirements.txt && python real_backend.py"
 
 [nix]
 channel = "stable-22_11"
@@ -11,4 +11,4 @@ localPort = 5000
 externalPort = 80
 
 [deployment]
-run = ["sh", "-c", "python real_backend.py"]
+run = ["sh", "-c", "pip install -r requirements.txt && python real_backend.py"]
